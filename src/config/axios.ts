@@ -1,4 +1,5 @@
 import axios from 'axios';
+import history from './history'
 
 const instance = axios.create({
   baseURL: 'https://gp-server.hunger-valley.com',
@@ -25,7 +26,8 @@ instance.interceptors.response.use(function (response) {
   return response;
 }, function (error) {
   if(error.response.status === 401){
-    window.location.href = '/login'
+    history.push('/login')
+    // window.location.href = '/login'
   }
 });
 

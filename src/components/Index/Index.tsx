@@ -16,15 +16,11 @@ class Index extends React.Component<any,any> {
   }
 
   getMe = async () => {
-    try {
       const response = await axios.get('me');
       if(response){
         this.setState({user : response.data})
       }
-    }catch (e) {
-      console.log(e)
-      // this.props.history.push('/login');
-    }
+
   };
 
   LoginOut = () => {
