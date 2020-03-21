@@ -1,39 +1,59 @@
 import * as React from 'react';
-import {Button} from 'antd';
+import {Dropdown, Menu} from 'antd';
+import {SettingOutlined, LoginOutlined, UserOutlined} from '@ant-design/icons';
 import axios from '../../config/axios';
+import history from '../../config/history';
+import Todos from '../Todos/Todos';
+import './Index.scss';
+
+const LoginOut = () => {
+  localStorage.setItem('x-token', '');
+  history.push('/login');
+};
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <span><SettingOutlined/>个人设置</span>
+    </Menu.Item>
+    <Menu.Item>
+      <span onClick={LoginOut}><LoginOutlined/>注销</span>
+    </Menu.Item>
+  </Menu>
+);
 
 
-class Index extends React.Component<any,any> {
+class Index extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      user : {}
-    }
+      user: {}
+    };
   }
 
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     await this.getMe();
   }
 
   getMe = async () => {
-      const response = await axios.get('me');
-      if(response){
-        this.setState({user : response.data})
-      }
+    const response = await axios.get('me');
+    if (response) {
+      this.setState({user: response.data});
+    }
 
-  };
-
-  LoginOut = () => {
-    localStorage.setItem('x-token','');
-    this.props.history.push('/login');
   };
 
   render() {
     return (
-      <>
-      <p>欢迎 {this.state.user.account}</p>
-      <Button onClick={this.LoginOut}>注销</Button>
-      </>
+      <div className='Index'>
+        <header>
+          <span className="logo">LOGO</span>
+          <Dropdown overlay={menu}>
+            <span><UserOutlined style={{marginRight: '10px'}}/>{this.state.user.account}</span>
+          </Dropdown>
+        </header>
+        <Todos/>
+      </div>
     );
   }
 }

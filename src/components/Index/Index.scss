@@ -1,0 +1,12 @@
+.Index {
+  margin: 0 auto;
+  max-width: 1000px;
+  > header {
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
