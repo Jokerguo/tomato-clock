@@ -32,7 +32,7 @@ class TodoInput extends React.Component<any, TodoInputState> {
       <div className='TodoInput'>
         <Input placeholder="添加任务" suffix={suffix} value={description}
                onChange={e => this.setState({description: e.target.value})}
-               onKeyUp={this.onKeyUp}/>
+               onKeyUp={this.onKeyUp} />
       </div>
     );
   }
