@@ -24,7 +24,9 @@ instance.interceptors.response.use(function (response) {
   }
   return response;
 }, function (error) {
-  return Promise.reject(error);
+  if(error.response.status === 401){
+    window.location.href = '/login'
+  }
 });
 
 export default instance;

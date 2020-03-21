@@ -33,7 +33,6 @@ class Login extends React.Component<any, LoginState> {
         account,
         password,
       });
-      console.log(this.props);
       this.props.history.push('/');
     } catch (e) {
       throw new Error(e);
