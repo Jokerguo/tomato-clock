@@ -1,0 +1,23 @@
+.SignUp{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  min-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  > *{
+    margin-bottom: 20px;
+  }
+
+  > .button{
+    line-height: 16px;
+    width: 100%;
+    background: #40a9ff;
+    color: #fff;
+  }
+}
+
