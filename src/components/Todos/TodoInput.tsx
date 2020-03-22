@@ -29,7 +29,7 @@ class TodoInput extends React.Component<any, TodoInputState> {
     const {description} = this.state;
     const suffix = description ? <EnterOutlined onClick={() => this.addTodo()}/> : <span/>;
     return (
-      <div className='TodoInput'>
+      <div >
         <Input placeholder="添加任务" suffix={suffix} value={description}
                onChange={e => this.setState({description: e.target.value})}
                onKeyUp={this.onKeyUp} />
