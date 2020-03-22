@@ -1,6 +1,15 @@
 .Todo{
-  border: 1px solid ;
+  border: 1px solid gray;
   padding: 16px;
   margin: 16px;
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0 2px 0 rgba(225,225,225,0.2);
+  background: #fdfdfd;
+  width: calc(50% - 8px);
+  > main {
+    margin-top: 16px;
+  }
 }
