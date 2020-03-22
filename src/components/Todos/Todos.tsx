@@ -47,13 +47,25 @@ class Todos extends React.Component<any, ITodosState> {
     });
     this.setState({todos: newTodos});
   };
+  toEditing =(id: number)=>{
+    const {todos} = this.state;
+    const newTodos = todos.map(t =>{
+      if(id === t.id){
+        return Object.assign({},t,{editing : true})
+      } else {
+        return Object.assign({}, t, {editing: false})
+      }
+    });
+    this.setState({todos: newTodos})
+  };
 
   render() {
     return (
       <div className='Todo'>
         <TodoInput addTodo={(params: any) => this.addTodo(params)}/>
         <main>
-          {this.state.todos.map(t => <TodoItem key={t.id} {...t} update={(this.updateTodo)}/>)}
+          {this.state.todos.map(t => <TodoItem
+            key={t.id} {...t} update={(this.updateTodo)} toEditing={this.toEditing}/>)}
         </main>
       </div>
     );
