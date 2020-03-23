@@ -4,7 +4,7 @@ import {SettingOutlined, LoginOutlined, UserOutlined} from '@ant-design/icons';
 import axios from '../../config/axios';
 import history from '../../config/history';
 import Todos from '../Todos/Todos';
-import './Index.scss';
+import './Home.scss';
 
 const LoginOut = () => {
   localStorage.setItem('x-token', '');
@@ -23,7 +23,7 @@ const menu = (
 );
 
 
-class Index extends React.Component<any, any> {
+class Home extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -45,7 +45,7 @@ class Index extends React.Component<any, any> {
 
   render() {
     return (
-      <div className='Index'>
+      <div className='Home'>
         <header>
           <span className="logo">LOGO</span>
           <Dropdown overlay={menu}>
@@ -58,4 +58,4 @@ class Index extends React.Component<any, any> {
   }
 }
 
-export default Index;
+export default Home;
