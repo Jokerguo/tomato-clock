@@ -17,7 +17,6 @@ class Tomatoes extends React.Component<ITomatoProps> {
   }
 
    get unfinishedTomato() {
-     console.log(this.props.tomatoes);
      return this.props.tomatoes.filter(t => !t.description && !t.ended_at)[0];
   }
 
@@ -44,7 +43,7 @@ class Tomatoes extends React.Component<ITomatoProps> {
     return (
       <div className='Tomatoes'>
         <TomatoAction startTomato={this.startTomato}
-                      unfinishedTomato={this.unfinishedTomato}/>
+                      unfinishedTomato={this.unfinishedTomato  && this.unfinishedTomato}/>
       </div>
     );
   }

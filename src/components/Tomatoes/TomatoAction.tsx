@@ -8,15 +8,10 @@ interface ITomatoActionProps {
 
 class TomatoAction extends React.Component<ITomatoActionProps> {
 
-
-  componentDidMount(): void {
-    console.log(this.props);
-  }
-
   render() {
     return (
       <div>
-        {/*{this.props.unfinishedTomato.id}*/}
+        {this.props.unfinishedTomato && this.props.unfinishedTomato.id}
         <Button className='startTomatoButton' onClick={() => this.props.startTomato()}>开始番茄</Button>
       </div>
     );
