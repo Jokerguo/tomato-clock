@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addTodo} from '../../redux/actions';
+import {addTodo} from '../../redux/actions/todos';
 import {Input} from 'antd';
 import {EnterOutlined} from '@ant-design/icons';
 import axios from '../../config/axios'

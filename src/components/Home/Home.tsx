@@ -4,6 +4,7 @@ import {SettingOutlined, LoginOutlined, UserOutlined} from '@ant-design/icons';
 import axios from '../../config/axios';
 import history from '../../config/history';
 import Todos from '../Todos/Todos';
+import Tomatoes from '../Tomatoes/Tomatoes';
 import './Home.scss';
 
 const LoginOut = () => {
@@ -52,7 +53,10 @@ class Home extends React.Component<any, any> {
             <span><UserOutlined style={{marginRight: '10px'}}/>{this.state.user.account}</span>
           </Dropdown>
         </header>
-        <Todos/>
+        <main>
+          <Tomatoes/>
+          <Todos/>
+        </main>
       </div>
     );
   }
