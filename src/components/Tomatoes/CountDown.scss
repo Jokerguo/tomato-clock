@@ -1,0 +1,20 @@
+.CountDown{
+  position: relative;
+  text-align: center;
+  padding: 4px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  >.restTime{
+    position: relative;
+    z-index: 1;
+  }
+  >.progress{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #a9a9a9;
+    z-index: 0;
+  }
+}
