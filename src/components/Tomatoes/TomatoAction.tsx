@@ -6,15 +6,18 @@ interface ITomatoActionProps {
   unfinishedTomato: any
 }
 
-class TomatoAction extends React.Component<ITomatoActionProps>{
-  // constructor(props: any) {
-  //   super(props);
-  // }
+class TomatoAction extends React.Component<ITomatoActionProps> {
+
+
+  componentDidMount(): void {
+    console.log(this.props);
+  }
 
   render() {
     return (
       <div>
-        <Button className='startTomatoButton' onClick={()=> this.props.startTomato()}>开始番茄</Button>
+        {/*{this.props.unfinishedTomato.id}*/}
+        <Button className='startTomatoButton' onClick={() => this.props.startTomato()}>开始番茄</Button>
       </div>
     );
   }

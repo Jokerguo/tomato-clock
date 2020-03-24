@@ -2,28 +2,30 @@ import React from 'react';
 import './Tomatoes.scss';
 import TomatoAction from './TomatoAction';
 import {connect} from 'react-redux';
-import {addTomato, initTomato} from '../../redux/actions/tomatoes';
+import {addTomato, initTomatoes} from '../../redux/actions/tomatoes';
 import axios from '../../config/axios';
 
 interface ITomatoProps {
   addTomato: (payload: any) => any
+  initTomatoes: (payload: any) => any
   tomatoes: any[]
 }
 
 class Tomatoes extends React.Component<ITomatoProps> {
-
-  async UNSAFE_componentWillMount() {
+  async componentDidMount() {
     await this.getTomatoes();
   }
 
-  get unfinishedTomato() {
-    return this.props.tomatoes.filter(t => !t.description && !t.ender_at)[0];
+   get unfinishedTomato() {
+     console.log(this.props.tomatoes);
+     return this.props.tomatoes.filter(t => !t.description && !t.ended_at)[0];
   }
+
 
   getTomatoes = async () => {
     try {
       const response = await axios.get('tomatoes');
-      console.log(response);
+      this.props.initTomatoes(response.data.resources);
     } catch (e) {
       throw new Error(e);
     }
@@ -41,7 +43,8 @@ class Tomatoes extends React.Component<ITomatoProps> {
   render() {
     return (
       <div className='Tomatoes'>
-        <TomatoAction startTomato={this.startTomato} unfinishedTomato={this.unfinishedTomato}/>
+        <TomatoAction startTomato={this.startTomato}
+                      unfinishedTomato={this.unfinishedTomato}/>
       </div>
     );
   }
@@ -55,7 +58,7 @@ const mapStateToProps = (state: any, ownProps: any) => {
 };
 const mapDispatchToProps = {
   addTomato,
-  initTomato
+  initTomatoes
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tomatoes);
