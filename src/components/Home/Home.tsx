@@ -3,8 +3,12 @@ import {Dropdown, Menu} from 'antd';
 import {SettingOutlined, LoginOutlined, UserOutlined} from '@ant-design/icons';
 import axios from '../../config/axios';
 import history from '../../config/history';
+import {connect} from 'react-redux';
+import {initTodos} from '../../redux/actions/todos';
+import {initTomatoes} from '../../redux/actions/tomatoes';
 import Todos from '../Todos/Todos';
 import Tomatoes from '../Tomatoes/Tomatoes';
+import Statistics from '../Statistics/Statistics';
 import './Home.scss';
 
 const LoginOut = () => {
@@ -34,7 +38,28 @@ class Home extends React.Component<any, any> {
 
   async UNSAFE_componentWillMount() {
     await this.getMe();
+    this.getTodos();
+    this.getTomatoes();
   }
+
+  getTodos = async () => {
+    try {
+      const response = await axios.get('todos');
+      const todos = response.data.resources.map((t: any) => Object.assign({}, t, {editing: false}));
+      this.props.initTodos(todos);
+    } catch (e) {
+      throw new Error(e);
+    }
+  };
+
+  getTomatoes = async () => {
+    try {
+      const response = await axios.get('tomatoes');
+      this.props.initTomatoes(response.data.resources);
+    } catch (e) {
+      throw new Error(e);
+    }
+  };
 
   getMe = async () => {
     const response = await axios.get('me');
@@ -57,9 +82,22 @@ class Home extends React.Component<any, any> {
           <Tomatoes/>
           <Todos/>
         </main>
+        <Statistics/>
       </div>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = (state: any, ownProps: any) => {
+  return {
+    todos: state.todos,
+    ...ownProps
+  };
+};
+
+const mapDispatchToProps = {
+  initTodos,
+  initTomatoes
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

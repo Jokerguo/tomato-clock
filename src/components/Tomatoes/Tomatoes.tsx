@@ -3,7 +3,7 @@ import './Tomatoes.scss';
 import TomatoAction from './TomatoAction';
 import TomatoList from './TomatoList';
 import {connect} from 'react-redux';
-import {addTomato, initTomatoes, updateTomato} from '../../redux/actions/tomatoes';
+import {addTomato, updateTomato} from '../../redux/actions/tomatoes';
 import axios from '../../config/axios';
 import _ from 'lodash';
 import dayjs from 'dayjs';
@@ -11,14 +11,10 @@ import dayjs from 'dayjs';
 interface ITomatoProps {
   addTomato: (payload: any) => any
   updateTomato: (payload: any) => any
-  initTomatoes: (payload: any) => any
   tomatoes: any[]
 }
 
 class Tomatoes extends React.Component<ITomatoProps> {
-  async componentDidMount() {
-    await this.getTomatoes();
-  }
 
   get unfinishedTomato() {
     return this.props.tomatoes.filter(t => !t.description && !t.ended_at && !t.aborted)[0];
@@ -32,14 +28,7 @@ class Tomatoes extends React.Component<ITomatoProps> {
   }
 
 
-  getTomatoes = async () => {
-    try {
-      const response = await axios.get('tomatoes');
-      this.props.initTomatoes(response.data.resources);
-    } catch (e) {
-      throw new Error(e);
-    }
-  };
+
 
   startTomato = async () => {
     try {
@@ -71,7 +60,6 @@ const mapStateToProps = (state: any, ownProps: any) => {
 const mapDispatchToProps = {
   addTomato,
   updateTomato,
-  initTomatoes
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tomatoes);
