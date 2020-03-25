@@ -27,9 +27,6 @@ class Tomatoes extends React.Component<ITomatoProps> {
     });
   }
 
-
-
-
   startTomato = async () => {
     try {
       const response = await axios.post('tomatoes', {duration: 1500000});
