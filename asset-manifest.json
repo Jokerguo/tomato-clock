@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Jokerguo/tomato-clock/static/css/main.b1719a59.chunk.css",
-    "main.js": "/Jokerguo/tomato-clock/static/js/main.74bdf18a.chunk.js",
-    "main.js.map": "/Jokerguo/tomato-clock/static/js/main.74bdf18a.chunk.js.map",
-    "runtime-main.js": "/Jokerguo/tomato-clock/static/js/runtime-main.02311e09.js",
-    "runtime-main.js.map": "/Jokerguo/tomato-clock/static/js/runtime-main.02311e09.js.map",
-    "static/css/2.f04dbcdc.chunk.css": "/Jokerguo/tomato-clock/static/css/2.f04dbcdc.chunk.css",
-    "static/js/2.c39ef234.chunk.js": "/Jokerguo/tomato-clock/static/js/2.c39ef234.chunk.js",
-    "static/js/2.c39ef234.chunk.js.map": "/Jokerguo/tomato-clock/static/js/2.c39ef234.chunk.js.map",
-    "index.html": "/Jokerguo/tomato-clock/index.html",
-    "precache-manifest.380adc1d21e905380322495a8e12e18f.js": "/Jokerguo/tomato-clock/precache-manifest.380adc1d21e905380322495a8e12e18f.js",
-    "service-worker.js": "/Jokerguo/tomato-clock/service-worker.js",
-    "static/css/2.f04dbcdc.chunk.css.map": "/Jokerguo/tomato-clock/static/css/2.f04dbcdc.chunk.css.map",
-    "static/css/main.b1719a59.chunk.css.map": "/Jokerguo/tomato-clock/static/css/main.b1719a59.chunk.css.map",
-    "static/js/2.c39ef234.chunk.js.LICENSE.txt": "/Jokerguo/tomato-clock/static/js/2.c39ef234.chunk.js.LICENSE.txt"
+    "main.css": "/tomato-clock/static/css/main.b1719a59.chunk.css",
+    "main.js": "/tomato-clock/static/js/main.080e9aa5.chunk.js",
+    "main.js.map": "/tomato-clock/static/js/main.080e9aa5.chunk.js.map",
+    "runtime-main.js": "/tomato-clock/static/js/runtime-main.1ffffa05.js",
+    "runtime-main.js.map": "/tomato-clock/static/js/runtime-main.1ffffa05.js.map",
+    "static/css/2.f04dbcdc.chunk.css": "/tomato-clock/static/css/2.f04dbcdc.chunk.css",
+    "static/js/2.c39ef234.chunk.js": "/tomato-clock/static/js/2.c39ef234.chunk.js",
+    "static/js/2.c39ef234.chunk.js.map": "/tomato-clock/static/js/2.c39ef234.chunk.js.map",
+    "index.html": "/tomato-clock/index.html",
+    "precache-manifest.69b46ebf96b2a60eb56843c901709795.js": "/tomato-clock/precache-manifest.69b46ebf96b2a60eb56843c901709795.js",
+    "service-worker.js": "/tomato-clock/service-worker.js",
+    "static/css/2.f04dbcdc.chunk.css.map": "/tomato-clock/static/css/2.f04dbcdc.chunk.css.map",
+    "static/css/main.b1719a59.chunk.css.map": "/tomato-clock/static/css/main.b1719a59.chunk.css.map",
+    "static/js/2.c39ef234.chunk.js.LICENSE.txt": "/tomato-clock/static/js/2.c39ef234.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.02311e09.js",
+    "static/js/runtime-main.1ffffa05.js",
     "static/css/2.f04dbcdc.chunk.css",
     "static/js/2.c39ef234.chunk.js",
     "static/css/main.b1719a59.chunk.css",
-    "static/js/main.74bdf18a.chunk.js"
+    "static/js/main.080e9aa5.chunk.js"
   ]
 }
