@@ -1,14 +1,15 @@
 .TomatoAction{
-  .countDownWrapper{
+  .countDownWrapper,.inputWrapper{
     position: relative;
     text-align: center;
+    >.abort{
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      background: #fff;
+      cursor: pointer;
+    }
   }
 
-  >.abort{
-    position: absolute;
-    right: -6px;
-    top: -6px;
-    background: #fff;
-    cursor: pointer;
-  }
+
 }
