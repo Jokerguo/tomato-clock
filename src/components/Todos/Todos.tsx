@@ -16,9 +16,9 @@ class Todos extends React.Component<any> {
     return this.unDeletedTodos.filter((t: any) => !t.completed);
   };
 
-  get completedTodos() {
-    return this.unDeletedTodos.filter((t: any) => t.completed);
-  };
+  // get completedTodos() {
+  //   return this.unDeletedTodos.filter((t: any) => t.completed);
+  // };
 
 
   async UNSAFE_componentWillMount() {
@@ -42,8 +42,8 @@ class Todos extends React.Component<any> {
         <main>
           {this.unCompletedTodos.map((t: any) => <TodoItem
             key={t.id} {...t}/>)}
-          {this.completedTodos.map((t: any) => <TodoItem
-            key={t.id} {...t} />)}
+          {/*{this.completedTodos.map((t: any) => <TodoItem*/}
+          {/*  key={t.id} {...t} />)}*/}
         </main>
       </div>
     );
