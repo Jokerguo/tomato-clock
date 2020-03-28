@@ -1,8 +1,11 @@
 #Statistics{
   >ul{
     display: flex;
+
     > li {
       flex: 1;
+      max-height: 130px;
+      border: 1px solid #ddd;
     }
   }
 }

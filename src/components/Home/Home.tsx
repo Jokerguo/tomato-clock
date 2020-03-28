@@ -19,7 +19,7 @@ const LoginOut = () => {
 const menu = (
   <Menu>
     <Menu.Item>
-      <span><SettingOutlined/>个人设置</span>
+      <span onClick={()=>window.alert('还未设计个人设置页面，以后会继续完善')}><SettingOutlined/>个人设置</span>
     </Menu.Item>
     <Menu.Item>
       <span onClick={LoginOut}><LoginOutlined/>注销</span>
