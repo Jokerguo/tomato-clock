@@ -1,5 +1,5 @@
 import axios from 'axios';
-import history from './history'
+import history from './history';
 
 const instance = axios.create({
   baseURL: 'https://gp-server.hunger-valley.com',
@@ -25,9 +25,11 @@ instance.interceptors.response.use(function (response) {
   }
   return response;
 }, function (error) {
-  if(error.response.status === 401 && error.response !== ''){
-    history.push('/login')
+  if (error.response.status === 401 && error.response !== '') {
+    history.push('/login');
     // window.location.href = '/login'
+  } else {
+    window.alert('请输入正确的用户名密码，未注册请先注册');
   }
 });
 
