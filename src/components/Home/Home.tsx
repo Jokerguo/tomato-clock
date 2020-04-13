@@ -19,7 +19,7 @@ const LoginOut = () => {
 const menu = (
   <Menu>
     <Menu.Item>
-      <span onClick={()=>window.alert('还未设计个人设置页面，以后会继续完善')}><SettingOutlined/>个人设置</span>
+      <span onClick={() => window.alert('还未设计个人设置页面，以后会继续完善')}><SettingOutlined/>个人设置</span>
     </Menu.Item>
     <Menu.Item>
       <span onClick={LoginOut}><LoginOutlined/>注销</span>
@@ -69,11 +69,17 @@ class Home extends React.Component<any, any> {
 
   };
 
+
   render() {
     return (
       <div className='Home'>
         <header>
-          <span className="logo">LOGO</span>
+          <span className="logo">
+              <svg className="icon" aria-hidden="true">
+                <use xlinkHref='#i-tomato'></use>
+              </svg>
+            番茄闹钟
+          </span>
           <Dropdown overlay={menu}>
             <span><UserOutlined style={{marginRight: '10px'}}/>{this.state.user.account}</span>
           </Dropdown>
@@ -87,6 +93,7 @@ class Home extends React.Component<any, any> {
     );
   }
 }
+
 
 const mapStateToProps = (state: any, ownProps: any) => {
   return {

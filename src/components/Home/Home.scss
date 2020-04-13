@@ -3,6 +3,13 @@
   max-width: 1000px;
   padding: 8px 16px;
   > header {
+    .icon {
+      width: 1em; height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+      margin-right: 8px;
+    }
     border-bottom: 1px solid black;
     font-size: 18px;
     padding: 8px 24px;
