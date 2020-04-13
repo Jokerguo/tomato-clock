@@ -29,7 +29,7 @@ class TodoHistoryTodoItem extends React.Component<ITodoHistoryTodoItemProps> {
       time = this.props.todo.created_at;
       action = (
         <div className='action'>
-          <span onClick={()=>this.updateTodo({finished: false})}>恢复</span>
+          <span onClick={()=>this.updateTodo({completed: false})}>恢复</span>
           <span onClick={()=>this.updateTodo({deleted: true})}>删除</span>
         </div>
       );
