@@ -1,11 +1,22 @@
 #Statistics{
   >ul{
     display: flex;
+    margin-top: 24px;
+    border-bottom: 1px solid black;
+    padding-left: 16px ;
+    padding-bottom: 8px;
 
     > li {
       flex: 1;
       max-height: 130px;
-      border: 1px solid #ddd;
+      font-size: 18px;
+      .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        margin-right: 8px;
+      }
     }
   }
 }

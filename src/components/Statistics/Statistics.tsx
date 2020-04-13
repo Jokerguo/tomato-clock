@@ -1,7 +1,7 @@
 import React from 'react';
 import './Statistics.scss';
 import {connect} from 'react-redux';
-import Polygon from './Polygon';
+// import Polygon from './Polygon';
 import _ from 'lodash';
 import dayjs from 'dayjs';
 import TodoHistory from './TodoHistory/TodoHistory';
@@ -27,11 +27,15 @@ class Statistics extends React.Component<IStatisticsProps> {
     return (
       <div id='Statistics'>
         <ul>
-          <li>番茄历史</li>
+          {/*<li>番茄历史</li>*/}
           <li>
-            <span> 任务历史</span> <br/>
-            <span >{this.finishedTodos.length}个任务</span>
-            <Polygon data={this.dailyTodos} totalFinishedCount={this.finishedTodos.length}/>
+            <span>
+              <svg className="icon" aria-hidden="true">
+                <use xlinkHref='#i-history'></use>
+              </svg>
+              任务历史</span> <br/>
+            {/*<span >{this.finishedTodos.length}个任务</span>*/}
+            {/*<Polygon data={this.dailyTodos} totalFinishedCount={this.finishedTodos.length}/>*/}
           </li>
         </ul>
         <TodoHistory/>
