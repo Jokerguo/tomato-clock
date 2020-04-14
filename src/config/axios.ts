@@ -28,8 +28,9 @@ instance.interceptors.response.use(function (response) {
   if (error.response.status === 401 && error.response !== '') {
     history.push('/login');
     // window.location.href = '/login'
-  } else {
-    window.alert('请输入正确的用户名密码，未注册请先注册');
+  } else if (error.response.status === 422) {
+    console.log(error);
+    window.alert('用户名或密码不正确，请重新输入');
   }
 });
 
