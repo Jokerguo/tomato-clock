@@ -4,7 +4,7 @@ import _ from 'lodash';
 import dayjs from 'dayjs';
 import {Tabs} from 'antd';
 import './TodoHistory.scss';
-import TodoHistoryTodoItem from './TodoHistoryTodoItem'
+import TodoHistoryTodoItem from './TodoHistoryTodoItem';
 
 const {TabPane} = Tabs;
 
@@ -42,12 +42,13 @@ class TodoHistory extends React.Component<ITodoHistoryProps> {
           <div className='summary'>
             <p className='date'>
               <span>{date}</span>
-              <span>周几</span>
             </p>
             <p>完成{this.dailyFinishedTodos[date].length}个任务</p>
           </div>
           <div className='todoList'>
-            {this.dailyFinishedTodos[date].map(todo => <TodoHistoryTodoItem itemType='finished' key={todo.id} todo={todo}/>)}
+            {this.dailyFinishedTodos[date].map(todo => {
+              return <TodoHistoryTodoItem itemType='finished' key={todo.id} todo={todo}/>;
+            })}
           </div>
         </div>
       );
@@ -55,7 +56,7 @@ class TodoHistory extends React.Component<ITodoHistoryProps> {
 
     const deletedTodoList = this.deletedTodos.map(todo => {
       return (
-            <TodoHistoryTodoItem key={todo.id} todo={todo} itemType='deleted'/>
+        <TodoHistoryTodoItem key={todo.id} todo={todo} itemType='deleted'/>
       );
     });
     return (
