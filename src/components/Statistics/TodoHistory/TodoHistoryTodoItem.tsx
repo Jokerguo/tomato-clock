@@ -26,7 +26,7 @@ class TodoHistoryTodoItem extends React.Component<ITodoHistoryTodoItemProps> {
     let action, formatText, time;
     if (this.props.itemType === 'finished') {
       formatText = 'HH:mm';
-      time = this.props.todo.created_at;
+      time = this.props.todo.updated_at;
       action = (
         <div className='action'>
           <span onClick={()=>this.updateTodo({completed: false})}>恢复</span>
@@ -44,7 +44,7 @@ class TodoHistoryTodoItem extends React.Component<ITodoHistoryTodoItemProps> {
     }
     return (
       <div className='TodoHistoryTodoItem'>
-        <div className={'text'}>
+        <div className='text'>
           <span className='time'>{dayjs(time).format(formatText)}</span>
           <span className='description'>{this.props.todo.description}</span>
         </div>
