@@ -45,6 +45,7 @@ class Home extends React.Component<any, any> {
   getTodos = async () => {
     try {
       const response = await axios.get('todos');
+      if(response === undefined){return}
       const todos = response.data.resources.map((t: any) => Object.assign({}, t, {editing: false}));
       this.props.initTodos(todos);
     } catch (e) {
@@ -55,6 +56,7 @@ class Home extends React.Component<any, any> {
   getTomatoes = async () => {
     try {
       const response = await axios.get('tomatoes');
+      if(response === undefined){return}
       this.props.initTomatoes(response.data.resources);
     } catch (e) {
       throw new Error(e);
