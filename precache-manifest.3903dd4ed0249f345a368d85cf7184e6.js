@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "221e4a51f7e813931adf54c82ed760f4",
+    "revision": "79fa9ecb615da87e2a051ea174038e49",
     "url": "/tomato-clock/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tomato-clock/static/css/2.f04dbcdc.chunk.css"
   },
   {
-    "revision": "88e46fcb88e1f280e49c",
+    "revision": "ac1cf3d9b833b517fc40",
     "url": "/tomato-clock/static/css/main.4880a47a.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tomato-clock/static/js/2.72998ec0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "88e46fcb88e1f280e49c",
-    "url": "/tomato-clock/static/js/main.5b06be1e.chunk.js"
+    "revision": "ac1cf3d9b833b517fc40",
+    "url": "/tomato-clock/static/js/main.c38a4249.chunk.js"
   },
   {
     "revision": "4bc4091b218c6ba5a965",
