@@ -10,6 +10,8 @@ interface LoginState {
   password: string,
 }
 
+// qqq: qqq; gg: 123qwe
+
 class Login extends React.Component<any, LoginState> {
   constructor(props: any) {
     super(props);
@@ -49,6 +51,7 @@ class Login extends React.Component<any, LoginState> {
         <Input.Password placeholder="请输入密码" value={password}
                         onChange={e => this.onChange('password', e.target.value)}/>
         <Button className='button' onClick={this.submit}>登录</Button>
+        <p>游客账号：gg , 123qwe</p>
         <p>如果未注册用户,请立即<Link to={`/signUp`}>注册</Link></p>
       </div>
     );

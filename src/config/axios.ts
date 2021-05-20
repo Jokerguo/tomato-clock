@@ -31,7 +31,7 @@ instance.interceptors.response.use(
     history.push('/login');
     // window.location.href = '/login'
   } else if (error.response.status === 422) {
-    window.alert('请求失败');
+    window.alert('接口存在问题，请求失败');
   }
 });
 
